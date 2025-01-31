@@ -23,6 +23,10 @@ h2 {
 
 }
 
+li {
+    list-style: none;
+}
+
 .playlist {
     margin: 20px;
     padding: 20px; /* Increased padding */

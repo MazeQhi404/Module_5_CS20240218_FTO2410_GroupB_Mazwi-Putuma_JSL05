@@ -25,19 +25,43 @@ const guardians = {
     // Add preferences for Drax, Rocket, and Groot
 };
 
+
 // Function to generate playlist based on preferred genre
 function generatePlaylist(guardians, songs) {
     // Use the map() function to create playlists for each Guardian
     // Your code here
 
-    // Gamoras Playlist ( my literal crush <3)
+    // Gamoras Playlist
     let playlistsDiv = document.getElementById('playlists');
     let gamorasPlaylistDiv = document.createElement('div');
     gamorasPlaylistDiv.className = 'playlist';
     const gamorasPlaylist= document.createElement('h2');
-    gamorasPlaylist.textContent= "Gamoras Playlist";
+    gamorasPlaylist.textContent= "Gamora's Playlist";
     playlistsDiv.appendChild(gamorasPlaylistDiv);
-    gamorasPlaylistDiv.appendChild(gamorasPlaylist)
+    gamorasPlaylistDiv.appendChild(gamorasPlaylist);
+
+    const gamorasSongs = songs.filter ( preferredGenre => preferredGenre.genre == guardians.Gamora);
+    console.log(gamorasSongs)
+    
+    const gamorasSongList = document.createElement('ul');
+    for ( i=0; i < gamorasSongs.length; i++) {
+
+        const li = document.createElement('li');
+        li.textContent = `${gamorasSongs[i].title} by ${gamorasSongs[i].artist}`;
+        gamorasSongList.appendChild(li);
+        
+       
+        
+    }
+
+    
+    
+    gamorasPlaylistDiv.appendChild(gamorasSongList); 
+
+
+
+
+
 
     
 

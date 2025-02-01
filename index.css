@@ -20,7 +20,6 @@ h2 {
     text-align: center;
     margin: 0;
     padding: 0;
-
 }
 
 li {
@@ -41,6 +40,7 @@ li {
 }
 
 .song-title {
+    display: inline-table;
     font-weight: bold;
     color: #FFD700; /* Gold color for song titles */
     text-decoration: underline; /* Underline effect for song titles */

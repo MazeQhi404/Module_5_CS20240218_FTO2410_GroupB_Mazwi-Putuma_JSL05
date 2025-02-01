@@ -17,7 +17,7 @@ const songs = [
 
 // Object containing each Guardian's preferred genre
 const guardians = {
-    "Star-Lord": "Rock",
+    "StarLord": "Rock",
     "Gamora": "Pop",
     "Drax": "R&B",
     "Rocket": "Pop",
@@ -40,32 +40,150 @@ function generatePlaylist(guardians, songs) {
     playlistsDiv.appendChild(gamorasPlaylistDiv);
     gamorasPlaylistDiv.appendChild(gamorasPlaylist);
 
+
     const gamorasSongs = songs.filter ( preferredGenre => preferredGenre.genre == guardians.Gamora);
     console.log(gamorasSongs)
     
     const gamorasSongList = document.createElement('ul');
     for ( i=0; i < gamorasSongs.length; i++) {
 
+        const songTitleStyling = document.createElement('p');
+        songTitleStyling.textContent = gamorasSongs[i].title
+        songTitleStyling.className = 'song-title';
+        gamorasSongList.appendChild(songTitleStyling)
+
         const li = document.createElement('li');
-        li.textContent = `${gamorasSongs[i].title} by ${gamorasSongs[i].artist}`;
+        li.textContent = ` by ${gamorasSongs[i].artist}`;
         gamorasSongList.appendChild(li);
-        
-       
-        
     }
 
+    gamorasPlaylistDiv.appendChild(gamorasSongList);
+
+
+    // StarLords Playlist
+    let starLordsPlaylistDiv = document.createElement('div');
+    starLordsPlaylistDiv.className = 'playlist';
+    const starLordsPlaylist= document.createElement('h2');
+    starLordsPlaylist.textContent= "Star Lord's Playlist";
+    playlistsDiv.appendChild(starLordsPlaylistDiv);
+    starLordsPlaylistDiv.appendChild(starLordsPlaylist);
+
+
+    const starLordsSongs = songs.filter ( preferredGenre => preferredGenre.genre == guardians.StarLord);
+    console.log(starLordsSongs)
+
     
+    const starLordsSongList = document.createElement('ul');
+    for ( i=0; i < starLordsSongs.length; i++) {
+
+        const songTitleStyling = document.createElement('p');
+        songTitleStyling.textContent = starLordsSongs[i].title;
+        songTitleStyling.className = 'song-title';
+        starLordsSongList.appendChild(songTitleStyling)
+
+        const li = document.createElement('li');
+        li.textContent = ` by ${starLordsSongs[i].artist}`;
+        starLordsSongList.appendChild(li);
+
+    }
+
+    starLordsPlaylistDiv.appendChild(starLordsSongList);
+
+    //Drax's Playlist
+
+    let draxPlaylistDiv = document.createElement('div');
+    draxPlaylistDiv.className = 'playlist';
+    const draxPlaylist= document.createElement('h2');
+    draxPlaylist.textContent = " Drax's Playlist";
+    playlistsDiv.appendChild(draxPlaylistDiv);
+    draxPlaylistDiv.appendChild(draxPlaylist);
+
+
+    const draxSongs = songs.filter ( preferredGenre => preferredGenre.genre == guardians.Drax);
+    console.log(draxSongs)
+
     
-    gamorasPlaylistDiv.appendChild(gamorasSongList); 
+    const draxSongList = document.createElement('ul');
+    for ( i=0; i < draxSongs.length; i++) {
+
+        const songTitleStyling = document.createElement('p');
+        songTitleStyling.textContent = draxSongs[i].title;
+        songTitleStyling.className = 'song-title';
+        draxSongList.appendChild(songTitleStyling)
+
+        const li = document.createElement('li');
+        li.textContent = ` by ${draxSongs[i].artist}`;
+        draxSongList.appendChild(li);
+
+    }
+
+    draxPlaylistDiv.appendChild(draxSongList); 
+
+    //Rockets Playlist
+
+    let rocketPlaylistDiv = document.createElement('div');
+    rocketPlaylistDiv.className = 'playlist';
+    const rocketPlaylist= document.createElement('h2');
+    rocketPlaylist.textContent= "Rocket's Playlist";
+    playlistsDiv.appendChild(rocketPlaylistDiv);
+    rocketPlaylistDiv.appendChild(rocketPlaylist);
 
 
-
-
-
+    const rocketSongs = songs.filter ( preferredGenre => preferredGenre.genre == guardians.Rocket);
+    console.log(rocketSongs)
 
     
+    const rocketSongList = document.createElement('ul');
+    for ( i=0; i < rocketSongs.length; i++) {
+
+        const songTitleStyling = document.createElement('p');
+        songTitleStyling.textContent = rocketSongs[i].title;
+        songTitleStyling.className = 'song-title';
+        rocketSongList.appendChild(songTitleStyling)
+
+        const li = document.createElement('li');
+        li.textContent = ` by ${rocketSongs[i].artist}`;
+        rocketSongList.appendChild(li);
+
+    }
+
+    rocketPlaylistDiv.appendChild(rocketSongList); 
+
+    // Baby Groot's Playlist
+
+    let grootPlaylistDiv = document.createElement('div');
+    grootPlaylistDiv.className = 'playlist';
+    const grootPlaylist= document.createElement('h2');
+    grootPlaylist.textContent= " Baby Groot's Playlist";
+    playlistsDiv.appendChild(grootPlaylistDiv);
+    grootPlaylistDiv.appendChild(grootPlaylist);
+
+
+    const grootSongs = songs.filter ( preferredGenre => preferredGenre.genre == guardians.Groot);
+    console.log(grootSongs)
+
+    
+    const grootSongList = document.createElement('ul');
+    for ( i=0; i < grootSongs.length; i++) {
+
+        const songTitleStyling = document.createElement('p');
+        songTitleStyling.textContent = grootSongs[i].title;
+        songTitleStyling.className = 'song-title';
+        grootSongList.appendChild(songTitleStyling)
+
+        const li = document.createElement('li');
+        li.textContent = ` by ${grootSongs[i].artist}`;
+        grootSongList.appendChild(li);
+
+    }
+
+    grootPlaylistDiv.appendChild(grootSongList); 
+
 
 }
+    
+
+
 
 // Call generatePlaylist and display the playlists for each Guardian
 generatePlaylist(guardians, songs);

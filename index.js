@@ -33,31 +33,31 @@ function generatePlaylist(guardians, songs) {
 
     // Gamoras Playlist
     let playlistsDiv = document.getElementById('playlists');
-    let gamorasPlaylistDiv = document.createElement('div');
-    gamorasPlaylistDiv.className = 'playlist';
+    let gamorasPlaylistDiv = document.createElement('div'); //created a div element that will contain gamoras playlist
+    gamorasPlaylistDiv.className = 'playlist'; // added a class name to the variable that will apply the styles in the stylesheet to the element
     const gamorasPlaylist= document.createElement('h2');
     gamorasPlaylist.textContent= "Gamora's Playlist";
-    playlistsDiv.appendChild(gamorasPlaylistDiv);
+    playlistsDiv.appendChild(gamorasPlaylistDiv); // appended gamoras playlist to the main div element
     gamorasPlaylistDiv.appendChild(gamorasPlaylist);
 
 
-    const gamorasSongs = songs.filter ( preferredGenre => preferredGenre.genre == guardians.Gamora);
+    const gamorasSongs = songs.filter ( preferredGenre => preferredGenre.genre == guardians.Gamora); // filtered songs object to include only the songs matching gamoras preferred genre, accessed through the condition where the genres in the songs object match the genre in the guardians object
     console.log(gamorasSongs)
     
-    const gamorasSongList = document.createElement('ul');
-    for ( i=0; i < gamorasSongs.length; i++) {
+    const gamorasSongList = document.createElement('ul'); // create a ul element that will contain the list of songs
+    for ( i=0; i < gamorasSongs.length; i++) { // iterating through the new filtered array conating only the preferred genre
 
         const songTitleStyling = document.createElement('p');
-        songTitleStyling.textContent = gamorasSongs[i].title
+        songTitleStyling.textContent = gamorasSongs[i].title  
         songTitleStyling.className = 'song-title';
-        gamorasSongList.appendChild(songTitleStyling)
+        gamorasSongList.appendChild(songTitleStyling) // added styling to the song titles by assigning the class 'song-title' to the titles in the gamoras filtered song list, then appended them to th ul element
 
         const li = document.createElement('li');
         li.textContent = ` by ${gamorasSongs[i].artist}`;
-        gamorasSongList.appendChild(li);
-    }
+        gamorasSongList.appendChild(li); // appended the list of names of the artists to the ul element
+    }  
 
-    gamorasPlaylistDiv.appendChild(gamorasSongList);
+    gamorasPlaylistDiv.appendChild(gamorasSongList); // appended the ul element  with the varibale gamorasSongList to to gamoras playlist div
 
 
     // StarLords Playlist
